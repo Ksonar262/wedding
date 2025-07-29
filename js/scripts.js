@@ -207,39 +207,62 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 
 
-    /********************** RSVP **********************/
-    $(document).ready(function() { // Ensure DOM is ready
+/********************** RSVP **********************/
+$(document).ready(function() { // Ensure DOM is ready
 
-        $('#rsvp-form').on('submit', function (e) {
-            e.preventDefault();
-            var data = $(this).serialize(); // This will include invite_code as plain text
+    $('#rsvp-form').on('submit', function (e) {
+        e.preventDefault();
+        
+        var inviteCodeInput = $('#invite_code').val();
+        console.log("JS Log: 1. Raw Input Invite Code:", inviteCodeInput); // What did the user type?
 
-            $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        // Trim whitespace from the input before sending
+        var trimmedInviteCode = inviteCodeInput.trim();
+        console.log("JS Log: 2. Trimmed Input Invite Code:", trimmedInviteCode);
 
-            // Send data to Google Apps Script for validation and saving
-            $.post('[https://script.google.com/macros/s/AKfycbz50-fi_3_H4kIBxU1ufTN7TIXRg8NUFyZiJqWOPh1sAV20yYfstR8Rv-VupcQobC4A/exec](https://script.google.com/macros/s/AKfycbz50-fi_3_H4kIBxU1ufTN7TIXRg8NUFyZiJqWOPh1sAV20yYfstR8Rv-VupcQobC4A/exec)', data)
-                .done(function (data) {
-                    console.log("Response from Google Apps Script:", data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (jqXHR, textStatus, errorThrown) {
-                    console.error("AJAX Error:", textStatus, errorThrown, jqXHR);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
+        // Create a FormData object to easily see what's being sent
+        var formData = new FormData(this); // 'this' refers to the form element
+        formData.set('invite_code', trimmedInviteCode); // Ensure the trimmed code is set
+
+        // For debugging, convert FormData to a plain object to log
+        var formDataObject = {};
+        formData.forEach(function(value, key){
+            formDataObject[key] = value;
         });
+        console.log("JS Log: 3. Data being sent to Apps Script:", formDataObject);
 
-        // Placeholder for alert_markup function if it's not defined elsewhere
-        // You should ensure this function is properly defined in your project.
-        function alert_markup(type, message) {
-            return `<div class="alert alert-${type}" role="alert">${message}</div>`;
-        }
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+
+        // Send data to Google Apps Script for validation and saving
+        // Note: $.post with FormData requires processData: false and contentType: false
+        $.ajax({
+            url: 'https://script.google.com/macros/s/AKfycbz50-fi_3_H4kIBxU1ufTN7TIXRg8NUFyZiJqWOPh1sAV20yYfstR8Rv-VupcQobC4A/exec',
+            type: 'POST',
+            data: formData,
+            processData: false, // Important for FormData
+            contentType: false, // Important for FormData
+            success: function(data) {
+                console.log("JS Log: 4. Response from Google Apps Script:", data);
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("JS Log: AJAX Error:", textStatus, errorThrown, jqXHR);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+            }
+        });
     });
-    
+
+    // Placeholder for alert_markup function if it's not defined elsewhere
+    function alert_markup(type, message) {
+        return `<div class="alert alert-${type}" role="alert">${message}</div>`;
+    }
+});
 
 /********************** Extras **********************/
 
