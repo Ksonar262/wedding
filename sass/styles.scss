@@ -386,12 +386,45 @@ Social share buttons
 }
 
 /* ==========================================================================
+Invitation Section Styling (Stylized Version)
+========================================================================== */
+#invitation h3 {
+    font-family: 'Playfair Display', serif; /* Apply the new font */
+    font-size: 2.5em; /* Make it a bit bigger for prominence */
+    margin-bottom: 40px;
+    color: #555;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    letter-spacing: 0.05em; /* A tiny bit more space between letters */
+}
+
+#invitation p {
+    font-family: 'Lora', serif; /* Apply the new font to paragraphs */
+    font-size: 1.15em; /* Slightly larger for better readability */
+    line-height: 1.6em; /* Adjust line height for the new font */
+    margin-bottom: 15px; /* Slightly more space between paragraphs now */
+    color: #333;
+}
+
+/* Ensure the text content is not too wide on very large screens for readability */
+#invitation .col-md-12 p { /* Target paragraphs within the invitation text column */
+    max-width: 800px; /* Limit text width for better readability */
+    margin-left: auto; /* Center the limited width text block */
+    margin-right: auto; /* Center the limited width text block */
+}
+
+/* Optional: General padding for the section */
+#invitation {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* ==========================================================================
 Intro
 ========================================================================== */
 
 .intro span.icon {
   font-size: 40px;
-  color: $accent-color;
+  color: $accent-color; /* Assuming $accent-color is defined elsewhere (Sass/SCSS) */
   font-weight: bold;
 }
 .intro-icon {
@@ -407,28 +440,63 @@ Intro
 }
 
 #intro {
+  /* Existing padding-top */
   padding-top: 40px;
+
+  /* NEW: Background Image Properties */
+  background-image: url('../img/background1.jpg'); /* Adjust path if your CSS file is in a subfolder, e.g., '../img/background1.jpg' */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+
+  /* Optional: Ensure enough height to showcase the background image */
+  min-height: 700px; /* Adjust this value as needed to make the section tall enough */
+
+  /* Optional: Add bottom padding to ensure content doesn't stick to the bottom edge of the background */
+  padding-bottom: 40px; /* Example, adjust to give space below content */
+
+  /* Flexbox properties to help center content vertically within the section, if desired */
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+
   img {
-    width: 100%; // Keep 100% to fill the column width responsively
-    height: 450px; // Set a fixed height for consistent image size
-    object-fit: contain; // Ensures the image covers the area without distortion
-    border-radius: 8px; // Add some rounded corners to the images
-    //box-shadow: 0 4px 10px rgba(0,0,0,0.1); // Add a subtle shadow
-    margin-top: 10px; // Add some top margin to push them down slightly from the top of their column
-    margin-bottom: 10px; // Add some bottom margin for spacing
-    display: block; // Ensure images behave as block elements for margin to apply correctly
+    width: 100%; /* Keep 100% to fill the column width responsively */
+    height: 450px; /* Set a fixed height for consistent image size */
+    object-fit: contain; /* Ensures the image covers the area without distortion */
+    border-radius: 8px; /* Add some rounded corners to the images */
+    /*box-shadow: 0 4px 10px rgba(0,0,0,0.1); */ /* Add a subtle shadow */
+    margin-top: 10px; /* Add some top margin to push them down slightly from the top of their column */
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+    display: block; /* Ensure images behave as block elements for margin to apply correctly */
   }
 }
-#intro p {
-  text-align: center;
-  margin-top: 10px; /* Add some top margin to separate text from images above */
-  margin-bottom: 10px; /* Add some bottom margin to separate text from images below */
-   font-size: 17px; // <-- NEW: Increased font size for the paragraph text. Adjust '17px' as desired.
-  line-height: 1.8; // <-- NEW: Added line height for better readability. Adjust '1.8' as desired.
+
+/* Add this new CSS rule, ideally near your #intro styles */
+.text-box-overlay {
+    background-color: rgba(255, 255, 240, 0.9); /* Cream color (f8f8e7) with 90% opacity */
+    padding: 30px; /* Add some padding inside the box */
+    border-radius: 8px; /* Slightly rounded corners for a softer look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-top: 20px; /* Adjust margin if needed to separate from content above/below */
+    margin-bottom: 20px;
 }
 
-// You might also want to adjust the vertical alignment of the columns if needed.
-// For example, to make the image columns align better with the text:
+/* You might want to remove or adjust padding on the #intro p if the textbox has padding */
+#intro p {
+  text-align: center;
+  /* Original margins */
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
+  /* You can set them to 0 or adjust as needed within the new box */
+  margin: 0; /* Or keep a small margin if desired within the box */
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* You might also want to adjust the vertical alignment of the columns if needed.
+   For example, to make the image columns align better with the text: */
 #intro .row {
     align-items: center; /* Vertically centers content within the row */
 }
@@ -574,10 +642,25 @@ Features-stack
 /* ==========================================================================
 .events
 ========================================================================== */
-.events {
+#events { /* Target the ID for the background image */
+  background-image: url('../img/background2.jpg'); /* Adjust path relative to your CSS file (e.g., '../img/background2.jpg' if CSS is in a 'css' folder) */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  min-height: 800px; /* Essential: Make sure the section is tall enough to show the background. Adjust this value as needed. */
+  padding-top: 60px; /* Keeps existing top padding, adjust if needed */
+  padding-bottom: 60px; /* Add bottom padding for content spacing */
+
+  /* Optional: You can add overlay effects directly to the section if desired,
+     e.g., a subtle dark overlay to make text stand out more. */
+  /* background-color: rgba(0, 0, 0, 0.2); */ /* Uncomment for a slight dark tint */
+  /* background-blend-mode: overlay; */ /* Often used with background-color for blending */
+}
+
+.events { /* This targets the class, where your column styles are */
   .leftcol {
     padding-right: 100px;
-    border-right: solid 1px $keyline-color;
+    border-right: solid 1px $keyline-color; /* Assuming $keyline-color is defined */
   }
   .rightcol {
     padding-left: 100px;
@@ -587,10 +670,26 @@ Features-stack
     font-size: 13px;
     font-style: italic;
     text-transform: lowercase;
-    color: $txt-primary;
+    color: $txt-primary; /* Assuming $txt-primary is defined */
   }
 }
 
+/* New CSS for the cream text box overlay (if not already in your CSS) */
+.text-box-overlay {
+    background-color: rgba(255, 255, 240, 0.9); /* Cream color with 90% opacity */
+    padding: 30px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Adds space between the event boxes */
+}
+
+/* Optional: Adjustments for readability within the text boxes */
+.text-box-overlay p,
+.text-box-overlay h5,
+.text-box-overlay strong,
+.text-box-overlay span.time {
+    color: #333; /* Darker text for readability against the cream background */
+}
 /* ==========================================================================
 .blog
 ========================================================================== */
