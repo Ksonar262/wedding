@@ -259,6 +259,8 @@ $('#rsvp-form').on('submit', function (e) {
 function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 };
+}
+);
 
 
 /********************** Extras **********************/
@@ -536,6 +538,3 @@ var MD5 = function (string) {
 
     return temp.toLowerCase();
 }; // End of MD5 function
-
-}
-);
