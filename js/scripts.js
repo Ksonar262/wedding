@@ -194,7 +194,7 @@ $(document).ready(function () {
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('December 2, 2017 3:00'),
+            end: new Date('December 2, 2025 3:00'),
 
             // Event Address
             address: 'Marigold Banquets, Pune',
