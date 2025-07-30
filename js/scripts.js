@@ -265,17 +265,38 @@ function alert_markup(alert_type, msg) {
 
 // Google map
 function initMap() {
-    var location = {lat: 18.507774957407666, lng: 73.76372188288029};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
+    console.log("initMap function STARTING."); // Add this
+    var mapCanvasElement = document.getElementById('map-canvas');
+    console.log("map-canvas element:", mapCanvasElement); // Check if it's found (should be <div id="map-canvas">...</div>)
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
+    if (!mapCanvasElement) {
+        console.error("ERROR: #map-canvas element was not found in the DOM!");
+        return; // Exit if element is missing
+    }
+
+    try {
+        var location = {lat: 18.507774957407666, lng: 73.76372188288029}; // Pune location
+        console.log("Map center location:", location);
+
+        // This is the most crucial line for map creation
+        var map = new google.maps.Map(mapCanvasElement, {
+            zoom: 15,
+            center: location,
+            scrollwheel: false
+        });
+        console.log("Google Map object successfully created:", map); // Check if this logs a map object
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        console.log("Marker successfully added.");
+
+    } catch (e) {
+        console.error("Error during map initialization (inside initMap):", e); // Catch any runtime errors here
+    }
+
+    console.log("initMap function FINISHED."); // Add this
 }
 
 function initBBSRMap() {
