@@ -203,7 +203,7 @@ Navigation
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
   border-radius: 1px;
-  background: #fff;
+  background: #ffffff;
   cursor: pointer
 }
 .nav-toggle span:before {
@@ -253,7 +253,9 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 100vh;
-  background: url('../img/main1.jpg') center center;
+  background:
+    //linear-gradient(rgba(37, 37, 37, 0.2), rgba(164, 164, 164, 0.4)), 
+    url('../img/hero4.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -287,6 +289,8 @@ Hero
     margin-bottom: 12%;
   }
 }
+
+
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;
@@ -310,7 +314,7 @@ header {
 
   a {
     // Original: color: $txt-light; text-transform: uppercase; font-size: $nav-font-size;
-    color: #fff; // White color for contrast
+    color: #ffffff; // White color for contrast
     text-transform: uppercase;
     font-family: "Nunito", sans-serif; // Using Nunito for better readability
     font-size: 18px; // Increased font size
@@ -334,7 +338,7 @@ header {
       display: inline;
 
       a {
-        color: #fff; // Ensuring primary nav links are white
+        color: #ffffff; // Ensuring primary nav links are white
         padding-right: 25px;
 
         &:hover {
@@ -351,7 +355,7 @@ header {
       display: inline;
 
       a {
-        color: #fff; // Ensuring member action links are white
+        color: #ffffff; // Ensuring member action links are white
 
         &:hover {
           color: $accent-color; // Retain accent color on hover
@@ -418,15 +422,104 @@ Invitation Section Styling (Stylized Version)
     padding-bottom: 80px;
 }
 
+#invitation .highlight-date {
+    font-size: 1.75em;
+    color: #a0522d; /* Warm brown tone */
+    font-weight: bold;
+    margin: 30px 0;
+    text-shadow: 1px 1px 3px rgba(160, 82, 45, 0.2);
+}
+
+@media (min-width: 768px) {
+    #invitation .highlight-date {
+        font-size: 2em;
+    }
+}
+
+/* Highlighted date */
+#invitation .highlight-date {
+    font-size: 2em;
+    color: #a0522d;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(160, 82, 45, 0.2);
+}
+
+/* Invitation line */
+#invitation .invite-text {
+    font-size: 1.2em;
+    color: #444;
+    font-family: 'Lora', serif;
+    margin: 20px 0 40px;
+}
+
+/* Countdown styling */
+#countdown {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #8b0000;
+    margin-top: 10px;
+}
+
+/* Motif images */
+.motif {
+    width: 60px;
+    opacity: 0.3;
+    margin: 20px auto;
+}
+
+.motif-top,
+.motif-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+
 /* ==========================================================================
 Intro
 ========================================================================== */
 
+#intro {
+  padding-top: 40px;
+  background-image: url('../img/background1.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 700px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* Specific height for kat.png to make it slightly taller */
+  .wp2,
+  .wp9 {
+    height: 480px;
+  }
+
+  /* You might also want to adjust the vertical alignment of the columns if needed. */
+  .row {
+    align-items: center;
+  }
+}
+
 .intro span.icon {
   font-size: 40px;
-  color: $accent-color; /* Assuming $accent-color is defined elsewhere (Sass/SCSS) */
+  color: $accent-color;
   font-weight: bold;
 }
+
 .intro-icon {
   display: inline-block;
   vertical-align: top;
@@ -434,71 +527,28 @@ Intro
   margin-right: 20px;
   width: 60px;
 }
+
 .intro-content {
   display: inline-block;
   width: 90%;
 }
 
-#intro {
-  /* Existing padding-top */
-  padding-top: 40px;
-
-  /* NEW: Background Image Properties */
-  background-image: url('../img/background1.jpg'); /* Adjust path if your CSS file is in a subfolder, e.g., '../img/background1.jpg' */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-
-  /* Optional: Ensure enough height to showcase the background image */
-  min-height: 700px; /* Adjust this value as needed to make the section tall enough */
-
-  /* Optional: Add bottom padding to ensure content doesn't stick to the bottom edge of the background */
-  padding-bottom: 40px; /* Example, adjust to give space below content */
-
-  /* Flexbox properties to help center content vertically within the section, if desired */
-  display: flex;
-  flex-direction: column; /* Arrange content vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-
-  img {
-    width: 100%; /* Keep 100% to fill the column width responsively */
-    height: 450px; /* Set a fixed height for consistent image size */
-    object-fit: contain; /* Ensures the image covers the area without distortion */
-    border-radius: 8px; /* Add some rounded corners to the images */
-    /*box-shadow: 0 4px 10px rgba(0,0,0,0.1); */ /* Add a subtle shadow */
-    margin-top: 10px; /* Add some top margin to push them down slightly from the top of their column */
-    margin-bottom: 10px; /* Add some bottom margin for spacing */
-    display: block; /* Ensure images behave as block elements for margin to apply correctly */
-  }
-}
-
-/* Add this new CSS rule, ideally near your #intro styles */
 .text-box-overlay {
-    background-color: rgba(255, 255, 240, 0.9); /* Cream color (f8f8e7) with 90% opacity */
-    padding: 30px; /* Add some padding inside the box */
-    border-radius: 8px; /* Slightly rounded corners for a softer look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    margin-top: 20px; /* Adjust margin if needed to separate from content above/below */
-    margin-bottom: 20px;
+  background-color: rgba(255, 255, 240, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-/* You might want to remove or adjust padding on the #intro p if the textbox has padding */
 #intro p {
   text-align: center;
-  /* Original margins */
-  /* margin-top: 10px; */
-  /* margin-bottom: 10px; */
-  /* You can set them to 0 or adjust as needed within the new box */
-  margin: 0; /* Or keep a small margin if desired within the box */
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-/* You might also want to adjust the vertical alignment of the columns if needed.
-   For example, to make the image columns align better with the text: */
-#intro .row {
-    align-items: center; /* Vertically centers content within the row */
+  margin: 0;
+  font-size: 18px;
+  line-height: 2;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400; 
 }
 
 /* ==========================================================================
@@ -642,53 +692,73 @@ Features-stack
 /* ==========================================================================
 .events
 ========================================================================== */
-#events { /* Target the ID for the background image */
-  background-image: url('../img/background2.jpg'); /* Adjust path relative to your CSS file (e.g., '../img/background2.jpg' if CSS is in a 'css' folder) */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  min-height: 800px; /* Essential: Make sure the section is tall enough to show the background. Adjust this value as needed. */
-  padding-top: 60px; /* Keeps existing top padding, adjust if needed */
-  padding-bottom: 60px; /* Add bottom padding for content spacing */
-
-  /* Optional: You can add overlay effects directly to the section if desired,
-     e.g., a subtle dark overlay to make text stand out more. */
-  /* background-color: rgba(0, 0, 0, 0.2); */ /* Uncomment for a slight dark tint */
-  /* background-blend-mode: overlay; */ /* Often used with background-color for blending */
+#events {
+  background-image: url('../img/background2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 800px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.events { /* This targets the class, where your column styles are */
+.events {
   .leftcol {
     padding-right: 100px;
-    border-right: solid 1px $keyline-color; /* Assuming $keyline-color is defined */
+    border-right: solid 1px $keyline-color;
   }
   .rightcol {
     padding-left: 100px;
   }
 
+  /* This is the key change for the time span */
   .time {
-    font-size: 13px;
+    font-size: 16px; /* Increased font size */
     font-style: italic;
     text-transform: lowercase;
-    color: $txt-primary; /* Assuming $txt-primary is defined */
+    color: #555; /* A darker color for better contrast */
+    font-weight: 600; /* Made it a bit bolder to stand out */
+    display: block; /* Makes the time appear on its own line */
+    margin-top: 5px; /* Adds a little space between the title and time */
   }
 }
 
-/* New CSS for the cream text box overlay (if not already in your CSS) */
 .text-box-overlay {
-    background-color: rgba(255, 255, 240, 0.9); /* Cream color with 90% opacity */
-    padding: 30px; /* Padding inside the box */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    margin-bottom: 20px; /* Adds space between the event boxes */
+  text-align: center;
+  background-color: rgba(255, 255, 240, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin: 0 auto 20px; /* Centers horizontally */
+  max-width: 600px;    /* Prevents it from stretching too wide */
 }
 
-/* Optional: Adjustments for readability within the text boxes */
-.text-box-overlay p,
-.text-box-overlay h5,
-.text-box-overlay strong,
-.text-box-overlay span.time {
-    color: #333; /* Darker text for readability against the cream background */
+/* New and modified styles for readability and emphasis */
+.text-box-overlay p strong {
+    font-size: 24px; /* Much larger font size for the date */
+    font-weight: 700; /* Extra bold */
+    color: rgb(220, 92, 0); /* Use your main accent color to make it pop */
+    font-family: "Nunito", sans-serif; /* A nice, clean font */
+    display: block; /* Ensures the date is on its own line */
+    margin-bottom: 10px; /* Space between the date and the event title */
+}
+
+.text-box-overlay h5 {
+    font-size: 28px; /* Larger font size for the event title */
+    font-weight: 700; /* Extra bold */
+    color: #333; /* Darker color for high contrast */
+    text-transform: uppercase; /* Optional: Makes the titles all caps for a stylized look */
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 5px; /* Adjust spacing below the title */
+}
+
+/* This is a new rule for the descriptions to ensure they are readable */
+.text-box-overlay p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 15px; /* Adds some space below the title/time combo */
 }
 /* ==========================================================================
 .blog
@@ -779,71 +849,93 @@ Instagram
 Engagement Pics
 ========================================================================== */
 #eng-pics {
-  img {
-    width: 100%;
-    height: auto;
-    -moz-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-  }
-  .img-wrap {
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  .img-wrap .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    -moz-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0; }
-  .img-wrap i {
-    color: #fff;
-    font-size: 15px;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    top: 6px;
-    right: 6px; }
-  .img-wrap:hover img, .img-wrap:focus img {
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
-  .img-wrap:hover .overlay, .img-wrap:focus .overlay {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-    filter: alpha(opacity=1);
-    opacity: 1;
-    z-index: 9; }
-  .diamond {
-    width: 230px;
-    height: 230px;
-    position: absolute;
-    bottom: -145px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 500;
-  }
-  .ring {
-    width: 75px;
-    height: 75px;
-    border-radius: 75px;
-    border: 10px solid #d0d3d4;
-    position: absolute;
-    left: 34%;
-    top: 75%;
-    z-index: -1;
-  }
+  /* Set the background image for the 'wallpaper' effect */
+  background-image: url('../img/crinkled-cardboard-texture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0;
+  height: auto; /* Allows the section to grow or shrink based on content */
+  position: relative;
+  overflow: hidden;
 }
 
+#eng-pics .row {
+  display: flex; /* Use Flexbox for easy horizontal spacing */
+  justify-content: space-around; /* Distributes items evenly with space around them */
+  align-items: center; /* Centers items vertically within the row */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  height: auto;
+}
+
+#eng-pics .col-md-2 {
+  flex-grow: 1; /* Allows columns to grow and fill available space */
+  text-align: center; /* Centers the polaroid horizontally within its column */
+}
+
+#eng-pics .img-wrap {
+  position: relative; /* Change from 'absolute' to 'relative' for Flexbox layout */
+  overflow: visible;
+  background-color: #fff; /* Creates the white polaroid border */
+  padding: 10px 10px 40px 10px;
+  margin: 15px auto; /* Centers the polaroid within its flex item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: inline-block;
+  max-width: 250px; /* Adjust max-width to control the size of the polaroids */
+}
+
+/* Make sure the image inside the polaroid fits correctly */
+#eng-pics .img-wrap img {
+  width: 100%;
+  height: auto;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  border-radius: 0; /* Ensures the image itself is not rounded */
+}
+
+/* Individual rotation for each polaroid for a more natural look */
+#eng-pics .col-md-2:nth-child(1) .img-wrap {
+  transform: rotate(-5deg);
+}
+#eng-pics .col-md-2:nth-child(2) .img-wrap {
+  transform: rotate(5deg);
+}
+#eng-pics .col-md-2:nth-child(3) .img-wrap {
+  transform: rotate(-3deg);
+}
+
+/* Hover effects to make the polaroids interactive */
+#eng-pics .img-wrap:hover {
+  transform: rotate(0deg) scale(1.1); /* Straightens and enlarges on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* The overlay effect remains, but now it's relative to the image wrap */
+#eng-pics .img-wrap .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  z-index: 2;
+}
+
+#eng-pics .img-wrap:hover .overlay {
+  opacity: 1;
+  z-index: 9;
+}
+
+/* Other elements like diamond and ring are hidden to clean up the section */
+.diamond, .ring {
+    display: none;
+}
 /* ==========================================================================
 Embed video
 ========================================================================== */
@@ -905,72 +997,315 @@ Google map
 .pointer-events-auto {
   pointer-events: auto;
 }
+$rsvp-bg: #fef7f4;
+$keyline-color: #ddd;
+$accent-color: #a0522d;
+$form-placeholder: #aaa;
 
 /* ==========================================================================
-RSVP form
+RSVP Section - Refined Wedding Theme
 ========================================================================== */
 .rsvp {
-  padding-bottom: 140px;
+  padding: 40px 10px 80px;
+  background: linear-gradient(180deg, lighten($rsvp-bg, 5%) 0%, $rsvp-bg 100%);
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    color: $accent-color;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+    color: #6b5e56; // soft warm gray
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* --- RSVP Travel/Stay Options --- */
+  .rsvp-options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+  }
+
+  .option-separator {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: darken($accent-color, 15%);
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* --- RSVP Form Container --- */
   .rsvp-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.6s ease both;
+
+    /* --- RSVP Button --- */
     .rsvp-btn {
-      padding: 15px 0;
-      border-radius: 3px;
+      padding: 14px;
+      border-radius: 30px;
       width: 100%;
-      font-size: 13px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(45deg, lighten($accent-color, 10%), $accent-color);
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(45deg, $accent-color, darken($accent-color, 10%));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+        cursor: pointer;
+      }
     }
+
+    /* --- Input Groups --- */
     .form-input-group {
       width: 100%;
-      height: 55px;
-      margin: 0 auto 10px;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
-      border: solid 1px $keyline-color;
-      text-align: left;
+      height: 45px;
+      margin-bottom: 10px;
+      border: 1px solid $keyline-color;
+      border-radius: 6px;
+      background: #fffdfb;
       position: relative;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
 
       i {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
         color: $accent-color;
-        font-size: 14px;
+        font-size: 16px;
+
+        &::after {
+          content: "";
+          height: 24px;
+          width: 1px;
+          background-color: $keyline-color;
+          position: absolute;
+          left: 28px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
-      i:after {
-        content: "";
-        height: 30px;
-        width: 1px;
-        border-right: solid 1px $keyline-color;
-        position: absolute;
-        top: 50%;
-        left: 30px;
-        transform: translateY(-50%);
-      }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 20px;
-      }
+
       input {
-        padding-left: 68px;
+        padding-left: 60px;
         width: 100%;
         height: 100%;
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
         border: none;
+        background: transparent;
+        font-size: 15px;
+        color: #333;
+
+        &::placeholder {
+          color: $form-placeholder;
+          opacity: 0.7;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 6px rgba($accent-color, 0.3);
+          border-radius: 6px;
+        }
       }
-      input::-webkit-input-placeholder {
-        color: $form-placeholder;
+    }
+    
+
+    /* --- Checkbox Groups --- */
+    .form-checkbox-group {
+      background: #fff8f6;
+      border: 1px solid $keyline-color;
+      padding: 5px;
+      border-radius: 6px;
+      margin: 0;
+      transition: background 0.3s ease;
+
+      label {
+        display: flex;
+        align-items: flex-start;
+        font-size: 13px;
+        color: #444;
+        width: 100%;
+        gap: 10px;
+        line-height: 1.5;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          margin-top: 2px;
+          transform: scale(1.2);
+          accent-color: $accent-color;
+        }
       }
-      input:-moz-placeholder {
-        color: $form-placeholder;
+
+      input[type="checkbox"]:checked + span,
+      input[type="checkbox"]:checked ~ label {
+        background: rgba($accent-color, 0.05);
+        border-radius: 4px;
       }
-      input::-moz-placeholder {
-        color: $form-placeholder;
+    }
+
+    /* --- Reception RSVP Tile --- */
+    .reception-tile {
+      background-color: #fffdfb;
+      border: 1px solid lighten($keyline-color, 20%);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 1.1em;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input[type="checkbox"] {
+          transform: scale(1.2);
+          accent-color: $accent-color;
+        }
       }
-      input:-ms-input-placeholder {
-        color: $form-placeholder;
-      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  /*
+  --- General Spacing Adjustments ---
+  */
+  .rsvp {
+    padding: 20px 5px 30px; /* Reduces overall padding on the section */
+  }
+
+  .rsvp-form {
+    padding: 10px; /* Shrinks the padding inside the form container */
+    box-shadow: none; /* Removes the box shadow for a cleaner look on mobile */
+  }
+
+  .rsvp h3 {
+    font-size: 28px; /* Makes the heading a bit smaller */
+    margin-bottom: 10px; /* Reduces bottom margin */
+  }
+
+  .rsvp p {
+    font-size: 15px; /* Slightly smaller text for paragraphs */
+    margin-bottom: 10px; /* Less space below paragraphs */
+  }
+
+  /*
+  --- Form Element Adjustments ---
+  */
+  .rsvp-form .form-input-group {
+    height: 45px; /* Makes input fields shorter */
+    margin-bottom: 5px; /* Reduces space between input fields */
+  }
+
+  .rsvp-form .form-input-group i {
+    left: 15px; /* Moves the icon slightly to the left */
+  }
+
+  .rsvp-form .form-input-group i::after {
+    left: 5px; /* Adjusts the separator line's position */
+  }
+
+  .rsvp-form .form-input-group input {
+    padding-left: 50px; /* Reduces the left padding for the input text */
+    font-size: 14px; /* Smaller font size inside inputs */
+  }
+
+  .rsvp-form .form-checkbox-group {
+    padding: 3px; /* Reduces padding around checkbox groups */
+    margin-bottom: 2px; /* Adds a bit of space below the checkbox group */
+  }
+
+  .rsvp-form .form-checkbox-group label {
+    font-size: 14px; /* Smaller font for checkbox labels */
+  }
+
+  .rsvp-form .reception-tile {
+    padding: 10px; /* Reduces padding inside the reception tile */
+    margin: 5px 0; /* Less space above and below the tile */
+  }
+
+  /*
+  --- Button Adjustments ---
+  */
+  .rsvp-form .rsvp-btn {
+    padding: 12px; /* Makes the button a bit smaller */
+    font-size: 15px; /* Smaller font size on the button */
+  }
+}
+
+
+/* --- Animation --- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 767px) {
+  .rsvp {
+    padding: 30px 15px 60px;
+  }
+
+  .rsvp h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .rsvp p {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .rsvp-options-container {
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+  }
+
+  .option-separator {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+
+  .rsvp-form {
+    padding: 15px;
+
+    .form-input-group {
+      margin-bottom: 10px;
+    }
+
+    .rsvp-btn {
+      padding: 12px;
+      font-size: 1.1rem;
+    }
+
+    .form-checkbox-group label {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .reception-tile {
+      margin: 10px 0;
+      padding: 15px;
     }
   }
 }
@@ -1020,4 +1355,39 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+/* Petal Fall Base Styles */
+.petal-container {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Behind content */
+}
+
+.petal {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    animation: fall linear infinite;
+    will-change: transform;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateX(0) translateY(-10%) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(var(--drift)) translateY(50vh) rotate(180deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(calc(var(--drift) * -1)) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }

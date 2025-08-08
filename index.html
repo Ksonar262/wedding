@@ -16,9 +16,9 @@
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="Kathan & Sakshi getting hitched">
     <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="img/favicon-256x256.png">
+    <meta property="og:image" content="favicon-256x256.png">
     <meta property="og:type" content="website">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-256x256.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 
     <script>
@@ -120,12 +121,17 @@
 <section id="invitation" class="section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>We are getting hitched</h3>
-                <p>The date is 2<sup>nd</sup> of December '25 and we would like you to be a part of
-                    it.</p>
-                <p>We are excited to invite you to our wedding celebration in Pune, India. Join us for a day filled with love, laughter, and unforgettable memories.</p>
-                <p>We can't wait to celebrate with you!</p> 
+            <div class="col-md-12 text-center">            
+                <h3>We are getting married!</h3>
+                <p class="highlight-date">
+                    <strong>2<sup>nd</sup> December 2025</strong> | Pune
+                </p>
+                <p class="invite-text">
+                    A magical days, one beautiful union — and it wouldn’t be complete without you. 
+                </p>
+
+                <!-- Countdown Timer -->
+                <div id="countdown"></div>
             </div>
         </div>
     </div>
@@ -143,11 +149,11 @@
             <div class="col-md-6">
                 <div class="text-box-overlay">
                     <p>
-                        It all started, as all truly epic love stories do, with an unglamorous WhatsApp group message. Sakshi, in her impeccable timing, casually pinged the group: “Who's landing in the UK at 9:30?” Being the gentleman I am, I replied. One thing led to another, and before you could say "baggage claim," we'd slipped into the DMs faster than a rogue sock in a washing machine.
+                        It all started, as all great love stories do, with an unglamorous WhatsApp group message. Sakshi, with impeccable timing, asked who was landing in the UK at 9:30. I replied, and before we knew it, we’d slipped into the DMs.
 
-                        When we finally met in person, our initial thoughts were hilariously aligned: “Yeah, nothings gonna happen here!” Plot twist, folks: we were spectacularly wrong. We slowly but surely became the best of friends, forging an unbreakable bond over the most mundane (and essential) of tasks. I cooked up a storm, and she, bless her heart, tackled the dreaded dishes ; a true match made in #LivingAbroad101 heaven. Seriously, who needs a fancy dishwasher when you have a Sakshi? (And yes, that's when I first started thinking, "Hmm, maybe there is something here.")
+                        When we finally met in person, we both thought, “Yeah, nothing’s gonna happen here!” Plot twist: we were spectacularly wrong. We became the best of friends, with an unbreakable bond forged over the most essential of tasks—I cooked, and she, bless her heart, did the dishes.
 
-                        Our friendship truly blossomed over weekly adventures, exploring every hidden gem and questionable-but-delicious restaurants we could find. And then, because the universe apparently enjoys a good laugh, we actually ended up with a part-time job together. But it was amidst those shared shifts, the endless snack breaks, and the ridiculous inside jokes that I realized my heart wasn't just having fun; it was falling, head over heels, for the woman who could make even dish duty seem charming. And, well, the rest, as they say, is our wonderfully quirky, perfectly imperfect history. 💛
+                        Our friendship blossomed over weekly adventures and ridiculous inside jokes. We even ended up with a part-time job together. It was during those shared shifts and endless snack breaks that I realized my heart was falling, head over heels, for the woman who made even dish duty charming. And well, the rest is our wonderfully quirky history. 💛
                     </p>
                 </div>
             </div>
@@ -162,26 +168,57 @@
 
 <section class="events section-padding" id="events">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-12 text-center">
                 <h3 class="header">Events</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 rightcol">
+
+            <!--<div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="text-box-overlay">
+                    <div class="wp3">
+                        <p><strong>30th November</strong></p>
+                        <h5>Mandap Muhurt & Jaan Prasthan <span class="time">Ahmedabad | 11AM AND 8:15PM RESP.</span></h5>
+                        <p>The Mandap Muhurt seeks blessings for our marriage, while the Jaan Prasthan marks the groom’s festive journey to the bride’s home. This is a joyous and traditional start to our celebrations.</p>
+                    </div>
+                </div>
+                <div class="text-box-overlay">
+                    <div class="wp5">
+                        <p><strong>1st December</strong></p>
+                        <h5>Engagement <span class="time">Pune | 4:30PM - 6PM</span></h5>
+                        <p>A beautiful prelude to our journey, this ceremony marks the formal announcement of our marriage. We will exchange rings, symbolizing our commitment and the beginning of our shared future.</p>
+                    </div>
+                </div>
+                <div class="text-box-overlay">
+                    <div class="wp5">
+                        <h5>Sangeet & Haldi <span class="time">Pune | 7PM onwards</span></h5>
+                        <p>Get ready to kick off the festivities with an evening of music, dance, and merriment. This is followed by the Haldi ceremony, a beautiful tradition to bless and beautify us for the big day ahead.</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-12 d-flex flex-column align-items-center">
                 <div class="text-box-overlay">
                     <div class="wp4">
                         <p><strong>2nd December</strong></p>
-                        <h5>Wedding Vidhi <span class="time">8AM-10AM</span></h5>
-                        <p>The absolute heart of our celebration awaits you at the Wedding Vidhi! Here, amidst sacred rituals and ancient hymns, we will solemnize our marriage and embark on our lifelong journey together. It is a moment of profound significance as we take our vows and receive the blessings that will guide our path.</p>
+                        <h5>Wedding Vidhi <span class="time">Pune | 8AM-10AM</span></h5>
+                        <p>The absolute heart of our celebration! Here, amidst sacred rituals, we will solemnize our marriage and take our vows. It is a moment of profound significance as we begin our lifelong journey together.</p>
                     </div>
                 </div>
                 <div class="text-box-overlay">
                     <div class="wp6">
-                        <h5>Mangalashtak <span class="time">12PM onwards</span></h5>
-                        <p>Prepare for a truly moving moment during the Mangalashtak. As eight auspicious verses are recited, showering blessings upon us, we will stand separated by a ceremonial cloth, which is then gracefully removed to signify our beautiful union. It will be a moment of profound emotion and divine grace, marking the cherished beginning of our new life as husband and wife.</p>
+                        <h5>Mangalashtak <span class="time">Pune | 12PM onwards</span></h5>
+                        <p>A truly moving moment where eight auspicious verses are recited to shower blessings upon us. The ceremonial cloth separating us is then removed, signifying our beautiful union as husband and wife.</p>
                     </div>
                 </div>
+                <!--<div class="text-box-overlay">
+                    <div class="wp6">
+                        <p><strong>3rd December</strong></p>
+                        <h5>Reception <span class="time">Ahmedabad | 7PM onwards</span></h5>
+                        <p>Join us for a grand celebration to mark our marriage. This is an evening to share our joy, enjoy delicious food and music, and create lasting memories with all our loved ones.</p>
+                    </div>
+                </div>-->
             </div>
         </div>
         <div class="row section-padding">
@@ -191,8 +228,8 @@
                 </a>
             </div>
         </div>
-        </div>
-
+    </div>
+    
     <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -200,21 +237,34 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                     </button>
                     <h3 class="text-center section-padding">Ugh... dress codes?</h3>
-                    
-                    <h5>Wedding <span class="time">8AM onwards</span></h5>
+                    <!-- <h5>Sangeet & Haldi <span class="time">Pune | 7PM onwards</span></h5>
+                    <p>
+                        <strong>Indo-western</strong>
+                        <br>
+                        Ladies can wear something like
+                        <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-women/">bright & vivid lehengas</a>
+                        and gentlemen can be in
+                        their <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-men/">vibrant
+                        suits</a> with pants or pyjamas along with an optional shawl.
+                    </p> -->
+                    <h5>Wedding Vidhi <span class="time">Pune | 8AM-10AM</span></h5>
                     <p>
                         <strong>Ethnic</strong>
                         <br>
                         Ladies can flaunt their unconventional sarees,
-                        <a href="https://www.com/ramswarooppatra/indo-western-lehengas/">lehengas</a>,
+                        <a href="https://www.pinterest.com/ramswarooppatra/indo-western-lehengas/">lehengas</a>,
                         <a href="https://www.pinterest.com/ramswarooppatra/indo-western-anarkalis/">anarkalis</a>,
                         dresses and the list
-                        goes on; whereas gentlemen can wear traditional marathi dhoti/kurtas or a <a
+                        goes on (teal would be a nice color) whereas gentlemen can wear traditional marathi dhoti/kurtas or a <a
                             href="https://www.pinterest.com/ramswarooppatra/high-neck-jackets-for-men/">high-neck
-                        (bandh gala) waistcoat & shirt</a> combo.
+                        (band gala) waistcoat & shirt</a> combo.
                     </p>
                 </div>
-            </div></div></div></section>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section id="instagram" class="section-padding">
     <div class="container">
@@ -253,42 +303,12 @@
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/gal2.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/gal2.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/gal4.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/gal4.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
                 <a class="fancybox" rel="group" href="img/gal8.jpeg">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
                         <img src="img/gal8.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/gal6.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/gal6" alt=""/>
                     </div>
                 </a>
             </div>
@@ -389,15 +409,30 @@
                         <div id="add-to-cal"></div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="error-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title" style="color: red; margin-top: 20px;">Error</h4>
+                    <p id="error-message-text" style="font-size: 16px;"></p>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 10px;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 15th of August '25</p>
+            <div class="col-md-8 col-md-offset-3">
+                <h3>आमच्या आनंदात सहभागी व्हा<br><span style="font-size: 2rem;">(Come, join our happiness)</span></h3>
+                <p>To help us plan your travel, stay, and ensure every moment is perfect, please confirm your participation by sharing details as follows </p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -422,7 +457,7 @@
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
                                                                   max="10"
-                                                                  placeholder="Husband/Wife or kids"
+                                                                  placeholder="Number of people attending"
                                                                   required>
                             </div>
                         </div>
@@ -435,17 +470,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
-                    </button>
-                </form>
-            </div>
-        </div>
+
+          <div class="row">
+            <div class="col-md-12 text-center" id="travel-stay-error-container"></div>
+          </div>
+
+          <div id="guest-details-section" style="display: none; margin-top: 20px;">
+            <h4>Guest Details for Stay/Travel</h4>
+            <div id="guest-details-container"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12" id="alert-wrapper"></div>
+          </div>
+                    
+          <button class="btn-fill rsvp-btn">
+            Yes, that's me!
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
 </section>
 
 <footer>
@@ -484,5 +529,93 @@
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
 </script>
+<script>
+    // Set the target date
+    const weddingDate = new Date("2025-12-01T00:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+    const interval = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            clearInterval(interval);
+            countdown.innerHTML = "🎊 It's Wedding Time! 🎊";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+</script>
+
+<!-- Petal Fall Container -->
+<div class="petal-container"></div>
+
+<script>
+    const container = document.querySelector('.petal-container');
+
+    const rosePetalSVG = `
+        <svg viewBox="0 0 64 64" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 2C18 10 12 26 18 40c6 14 22 14 28 0 6-14 0-30-14-38z" fill="#d72638"/>
+        </svg>
+    `;
+
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.innerHTML = rosePetalSVG;
+
+        const direction = Math.random() > 0.5 ? 1 : -1;
+        const scale = 0.8 + Math.random() * 0.6;
+        const rotation = Math.random() * 360;
+
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (6 + Math.random() * 4) + 's';
+        petal.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+        petal.style.setProperty('--drift', direction * 20 + 'px');
+
+        container.appendChild(petal);
+
+        setTimeout(() => petal.remove(), 10000);
+    }
+
+    // ✅ Mobile Performance Optimization
+    const isMobile = window.innerWidth < 768;
+    const petalInterval = isMobile ? 2200 : 1200; // slower on mobile
+    setInterval(createPetal, petalInterval);
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const travelCheckbox = document.getElementById('travel-checkbox');
+        const stayCheckbox = document.getElementById('stay-checkbox');
+        const errorMessageText = document.getElementById('error-message-text');
+
+        function validateCheckboxes() {
+            if (travelCheckbox.checked && stayCheckbox.checked) {
+                // Set the error message text
+                errorMessageText.innerText = "Please select only one.";
+                // Show the custom modal
+                $('#error-modal').modal('show');
+                
+                // Uncheck the box that was just clicked
+                if (this.id === 'travel-checkbox') {
+                    stayCheckbox.checked = false;
+                } else {
+                    travelCheckbox.checked = false;
+                }
+            }
+        }
+
+        travelCheckbox.addEventListener('change', validateCheckboxes);
+        stayCheckbox.addEventListener('change', validateCheckboxes);
+    });
+</script>
+
 </body>
 </html>
