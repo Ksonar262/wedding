@@ -502,16 +502,20 @@ Intro
     display: block;
   }
 
-  /* Specific height for kat.png to make it slightly taller */
-  .wp2,
-  .wp9 {
-    height: 480px;
-  }
-
   /* You might also want to adjust the vertical alignment of the columns if needed. */
   .row {
     align-items: center;
   }
+
+    /* 📌 Add mobile fix here */
+  @media (max-width: 767px) {
+    .wp8,
+    .wp9 {
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+
 }
 
 .intro span.icon {
